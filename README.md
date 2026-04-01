@@ -2,13 +2,13 @@
 
 A lightweight Python script that watches a parts inventory database and sends real-time alerts to Slack when stock drops below defined thresholds.
 
----
+
 
 > **Disclaimer:** This project is intended for **demonstration purposes only**. It is a vertical script built around internal company infrastructure (a proprietary MS Access database, internal network paths, and a company Slack workspace) and will not run outside of that environment as-is.
 
----
 
-## App in working
+
+## App in action
 <img width="996" height="595" alt="image" src="https://github.com/user-attachments/assets/de55f3d2-8948-4298-8068-ac590b3b5d8c" />
 <img width="490" height="414" alt="image" src="https://github.com/user-attachments/assets/8fb21153-9ddf-422b-81cd-a2b98b16698c" />
 <img width="648" height="431" alt="image" src="https://github.com/user-attachments/assets/41da2159-2e74-4c46-b7af-ae524f8dbc1e" />

@@ -8,6 +8,12 @@ A lightweight Python script that watches a parts inventory database and sends re
 
 ---
 
+## App in working
+<img width="996" height="595" alt="image" src="https://github.com/user-attachments/assets/de55f3d2-8948-4298-8068-ac590b3b5d8c" />
+<img width="490" height="414" alt="image" src="https://github.com/user-attachments/assets/8fb21153-9ddf-422b-81cd-a2b98b16698c" />
+<img width="648" height="431" alt="image" src="https://github.com/user-attachments/assets/41da2159-2e74-4c46-b7af-ae524f8dbc1e" />
+
+
 ## What it does
 
 - Polls an inventory database every 60 seconds and sends a Slack alert when any monitored part drops at or below its threshold

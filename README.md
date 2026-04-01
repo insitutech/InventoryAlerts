@@ -10,6 +10,11 @@ A lightweight Python script that watches a parts inventory database and sends re
 
 ## App in action
 ![InventoryAlert-Demo (1)](https://github.com/user-attachments/assets/30ba1e21-edb4-418b-b4bb-f303f8b6652e)
+<img width="1016" height="886" alt="image" src="https://github.com/user-attachments/assets/12911d4b-f1b6-4674-87b4-8067e9ace372" />
+<img width="614" height="382" alt="image" src="https://github.com/user-attachments/assets/38a725e2-e210-4129-bf86-261d6c79ec3b" />
+<img width="561" height="673" alt="image" src="https://github.com/user-attachments/assets/853b0fdc-386b-4d59-bb7f-cc2dd948f227" />
+
+
 
 ## What it does
 

@@ -1,0 +1,14 @@
+{
+    "_comment": "Set minimum on-hand quantities. Alerts fire when a part drops AT OR BELOW the threshold.",
+
+    "prefix_thresholds": {
+        "19T":  10,
+        "19S":  10,
+        "22PM": 10,
+        "15H":  10,
+        "18":   10
+    },
+
+    "part_thresholds": {
+    }
+}

@@ -1,0 +1,13 @@
+# Access database
+pyodbc>=4.0.39
+
+# Slack
+slack-sdk>=3.26.0
+slack-bolt>=1.18.1
+
+# Scheduling
+APScheduler>=3.10.4
+
+# Utilities
+python-dotenv>=1.0.1
+pytz>=2024.1

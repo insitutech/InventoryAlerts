@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InventoryAlert Commands</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f4f5f7;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+      width: 100%;
+      max-width: 780px;
+      overflow: hidden;
+    }
+
+    .card-header {
+      background: #1264a3;
+      padding: 22px 30px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .card-header .icon {
+      width: 36px;
+      height: 36px;
+      background: #fff;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .card-header h1 {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .card-header p {
+      color: rgba(255,255,255,0.75);
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead tr {
+      background: #f0f4f8;
+    }
+
+    thead th {
+      padding: 12px 24px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #5e6e82;
+      border-bottom: 1px solid #e1e5ea;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #f0f2f5;
+      transition: background 0.15s;
+    }
+
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: #f8f9fb; }
+
+    tbody tr.section-header td {
+      background: #f8f9fb;
+      padding: 8px 24px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #8a95a3;
+      border-top: 1px solid #e8eaed;
+    }
+
+    td {
+      padding: 14px 24px;
+      vertical-align: middle;
+    }
+
+    .cmd {
+      display: inline-block;
+      background: #f0f4f8;
+      border: 1px solid #d5dde5;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-family: "SFMono-Regular", Consolas, "Courier New", monospace;
+      font-size: 13px;
+      color: #c0392b;
+      white-space: nowrap;
+    }
+
+    .desc {
+      font-size: 14px;
+      color: #2c3e50;
+      line-height: 1.5;
+    }
+
+    .desc small {
+      display: block;
+      color: #8a95a3;
+      font-size: 12px;
+      margin-top: 3px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    .badge-auto   { background: #e8f5e9; color: #2e7d32; }
+    .badge-chart  { background: #e3f2fd; color: #1565c0; }
+    .badge-live   { background: #fff3e0; color: #e65100; }
+
+    .footer {
+      background: #f8f9fb;
+      border-top: 1px solid #e8eaed;
+      padding: 14px 24px;
+      font-size: 12px;
+      color: #8a95a3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer span strong { color: #5e6e82; }
+  </style>
+</head>
+<body>
+<div class="card">
+
+  <div class="card-header">
+    <div class="icon">📦</div>
+    <div>
+      <h1>InventoryAlert Commands</h1>
+      <p>Message the bot in any channel it's in, or DM it directly</p>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:38%">Type this</th>
+        <th>You get</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- Inventory -->
+      <tr class="section-header"><td colspan="2">Inventory Queries <span class="badge badge-live">Live Cache</span></td></tr>
+
+      <tr>
+        <td><span class="cmd">full inventory</span></td>
+        <td class="desc">All monitored parts with on-hand quantities</td>
+      </tr>
+      <tr>
+        <td><span class="cmd">low inventory</span></td>
+        <td class="desc">Only parts currently at or below threshold</td>
+      </tr>
+      <tr>
+        <td><span class="cmd">15H23 qty</span></td>
+        <td class="desc">Quantity for that exact part number</td>
+      </tr>
+      <tr>
+        <td><span class="cmd">19T qty</span></td>
+        <td class="desc">Quantities for all parts starting with <span class="cmd">19T</span></td>
+      </tr>
+
+      <!-- Reports -->
+      <tr class="section-header"><td colspan="2">Production Reports <span class="badge badge-chart">Bar Chart</span></td></tr>
+
+      <tr>
+        <td><span class="cmd">report</span></td>
+        <td class="desc">
+          Bar chart — products created in the last 30 days
+          <small>Only shows products with qty ≥ 1</small>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="cmd">report march</span></td>
+        <td class="desc">
+          Bar chart — products created in March (current year)
+          <small>Uses previous year automatically if month hasn't happened yet</small>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="cmd">report march 2025</span></td>
+        <td class="desc">Bar chart — products created in March 2025</td>
+      </tr>
+      <tr>
+        <td><span class="cmd">report 2025-03</span></td>
+        <td class="desc">Same as above — YYYY-MM format also accepted</td>
+      </tr>
+
+      <!-- Config -->
+      <tr class="section-header"><td colspan="2">Configuration</td></tr>
+
+      <tr>
+        <td><span class="cmd">thresholds</span></td>
+        <td class="desc">Show current alert thresholds from <span class="cmd">thresholds.json</span></td>
+      </tr>
+      <tr>
+        <td><span class="cmd">help</span></td>
+        <td class="desc">Show the command list in Slack</td>
+      </tr>
+
+      <!-- Automatic -->
+      <tr class="section-header"><td colspan="2">Automatic Notifications <span class="badge badge-auto">No command needed</span></td></tr>
+
+      <tr>
+        <td><span class="cmd">⚠ Low Inventory Alert</span></td>
+        <td class="desc">
+          Fires automatically when any part drops at or below its threshold
+          <small>One combined message per poll cycle — no per-part spam</small>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="cmd">✅ Inventory Recovered</span></td>
+        <td class="desc">Fires when an alerted part climbs back above threshold</td>
+      </tr>
+      <tr>
+        <td><span class="cmd">📅 Weekly Report</span></td>
+        <td class="desc">
+          Posted every <strong>Monday at 9:00 AM CST</strong> — low parts only
+          <small>Green checkmark message if everything is above threshold</small>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <span>DB polled every <strong>60 seconds</strong> — responses served from in-memory cache</span>
+    <span>Threshold config: edit <strong>thresholds.json</strong> (no restart needed)</span>
+  </div>
+
+</div>
+</body>
+</html>

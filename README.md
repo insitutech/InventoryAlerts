@@ -65,3 +65,4 @@ InventoryAlerts/
 ├── slack_client.py  Message formatting and Slack API wrapper
 └── thresholds.json  Edit this to change alert levels
 ```
+InSitu Technologies Inc. 
